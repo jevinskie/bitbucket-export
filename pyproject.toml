@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bitbucket-export"
+dynamic = ["version"]
+authors = [
+    {name = "Jevin Sweval", email = "jevinsweval@gmail.com"},
+]
+description = "Export all your Bitbucket repos"
+readme = {file = 'README.md', content-type='text/markdown'}
+requires-python = ">=3.7"
+keywords = ["bitbucket", "bitbucket-export"]
+license = {text = "BSD-2-Clause"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+    "atlassian-python-api"
+]
+
+[project.optional-dependencies]
+optional-dependencies = [
+    "pre-commit"
+]
+
+[project.urls]
+Repository = "https://github.com/jevinskie/bitbucket-export"
+
+[project.scripts]
+bitbucket-export = "bitbucket_export.tools.bitbucket_export_util.py:main"
+
+[tool.setuptools.dynamic]
+version = {attr = "bitbucket_export.__version__"}
+
+[tool.setuptools]
+zip-safe = true
