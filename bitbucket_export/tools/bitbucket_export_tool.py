@@ -5,7 +5,7 @@ import getpass
 import os
 from pathlib import Path
 
-import bitbucket_export_util
+from bitbucket_export.export import export_to
 
 
 def real_main(args):
@@ -15,7 +15,7 @@ def real_main(args):
     password = os.getenv("BITBUCKET_EXPORT_PASSWORD")
     if password is None:
         password = getpass.getpass("Bitbucket password: ")
-    bitbucket_export_util.export_to(args.directory, user, password)
+    export_to(args.directory, user, password)
 
 
 def main():

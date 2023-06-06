@@ -1,1 +1,1 @@
-from bitbucket_export.tools import bitbucket_export_util
+from bitbucket_export.tools import bitbucket_export_tool
